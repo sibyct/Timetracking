@@ -1,0 +1,13 @@
+.header-toolbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 2; // Ensure above sidenav content if needed
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.header-title {
+    margin-left: 8px;
+    font-weight: 500;
+}

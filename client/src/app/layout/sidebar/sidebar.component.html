@@ -1,0 +1,11 @@
+<mat-nav-list>
+    @for (item of navItems; track item.label) {
+    <a mat-list-item [routerLink]="item.route" routerLinkActive="active-link"
+        [matTooltip]="collapsed() ? item.label : ''" [matTooltipPosition]="'right'">
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+        @if (!collapsed()) {
+        <span matListItemTitle>{{item.label}}</span>
+        }
+    </a>
+    }
+</mat-nav-list>

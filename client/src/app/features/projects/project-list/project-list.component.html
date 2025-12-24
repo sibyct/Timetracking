@@ -1,0 +1,53 @@
+<div class="project-list-container">
+    <div class="header">
+        <h1>Projects</h1>
+        <button mat-raised-button color="primary" (click)="onAddProject()">
+            <mat-icon>add</mat-icon>
+            Add Project
+        </button>
+    </div>
+
+    <table mat-table [dataSource]="projects()" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="client">
+            <th mat-header-cell *matHeaderCellDef> Client </th>
+            <td mat-cell *matCellDef="let element"> {{element.client}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef> Type </th>
+            <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="startDate">
+            <th mat-header-cell *matHeaderCellDef> Start Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.startDate | date}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element">
+                <span class="status-badge" [class.ongoing]="element.status === 'Ongoing'"
+                    [class.completed]="element.status === 'Completed'" [class.on-hold]="element.status === 'On Hold'">
+                    {{element.status}}
+                </span>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="primary">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
