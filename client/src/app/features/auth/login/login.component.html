@@ -29,7 +29,7 @@
                         [attr.aria-label]="'Hide password'" type="button">
                         <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
                     </button>
-                    @if (loginForm.get('password')?.hasError('required')) {
+                    @if (loginForm.get('password')!.hasError('required')) {
                     <mat-error>
                         Password is required
                     </mat-error>
