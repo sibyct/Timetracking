@@ -20,7 +20,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 })
 export class MainLayoutComponent {
     readonly sidenav = viewChild.required<MatSidenav>('sidenav');
-    readonly isCollapsed = signal(false);
+    readonly isCollapsed = signal(true);
 
     protected onToggleSidebar() {
         this.isCollapsed.update(val => !val);

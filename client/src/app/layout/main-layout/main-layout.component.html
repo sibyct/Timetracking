@@ -2,11 +2,11 @@
     <time-tracker-header (toggleSidebar)="onToggleSidebar()"></time-tracker-header>
 
     <mat-sidenav-container class="sidenav-container">
-        <mat-sidenav #sidenav mode="side" opened class="sidenav" [class.collapsed]="isCollapsed()">
-            <time-tracker-sidebar [collapsed]="isCollapsed()"></time-tracker-sidebar>
+        <mat-sidenav #sidenav mode="side" opened class="sidenav">
+            <time-tracker-sidebar></time-tracker-sidebar>
         </mat-sidenav>
 
-        <mat-sidenav-content [style.margin-left]="isCollapsed() ? '80px' : '250px'">
+        <mat-sidenav-content>
             <div class="content-wrapper">
                 <router-outlet></router-outlet>
             </div>

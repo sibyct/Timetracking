@@ -1,20 +1,27 @@
-.active-link {
-    background-color: rgba(0, 0, 0, 0.05);
-    color: #3f51b5; // Primary color
-
-    mat-icon {
-        color: #3f51b5;
-    }
+.nav-list-container {
+    display: flex;
+    flex-direction: column;
 }
 
-:host-context(.collapsed) {
-    a[mat-list-item] {
-        display: flex;
-        justify-content: center;
-        padding: 0;
+.nav-list-item {
+    display: flex;
+    align-items: center;
 
-        ::ng-deep .mat-mdc-list-item-icon {
-            margin: 15px;
+    a {
+        text-align: center;
+
+        mat-icon {
+            color: white;
         }
+    }
+
+    padding: 0 6px;
+}
+
+.active-link {
+    background-color: #FF5969;
+
+    mat-icon {
+        color: white;
     }
 }

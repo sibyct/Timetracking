@@ -6,8 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <h1>Dashboard</h1>
-    <p>Welcome to the Time Tracker Dashboard.</p>
+  
   `,
   styles: [`
     h1 { color: #333; }

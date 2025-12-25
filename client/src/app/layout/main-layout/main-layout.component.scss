@@ -1,3 +1,5 @@
+@use "../../../styles/variables" as var;
+
 .layout-container {
     display: flex;
     flex-direction: column;
@@ -9,15 +11,7 @@
 }
 
 .sidenav {
-    width: 250px;
+    width: var.$nav-item-width;
     border-right: 1px solid rgba(0, 0, 0, 0.12);
-    transition: width 0.3s ease-in-out;
-
-    &.collapsed {
-        width: 80px; // Enough for icons
-    }
-}
-
-.content-wrapper {
-    padding: 24px;
+    background-color: #343F4F;
 }

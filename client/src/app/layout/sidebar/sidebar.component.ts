@@ -14,9 +14,8 @@ import { RouterModule } from '@angular/router';
 })
 export class SidebarComponent {
     collapsed = input<boolean>(false);
-    navItems = [
+    protected navItems = [
         { label: 'Dashboard', icon: 'dashboard', route: '/dashboard' },
-        { label: 'My Timesheets', icon: 'watch_later', route: '/timesheets' },
-        { label: 'Reports', icon: 'assessment', route: '/reports' }
+        { label: 'Employees', icon: 'groups', route: '/employees' },
     ];
 }
