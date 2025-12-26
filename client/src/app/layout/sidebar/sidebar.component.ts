@@ -17,5 +17,6 @@ export class SidebarComponent {
     protected navItems = [
         { label: 'Dashboard', icon: 'dashboard', route: '/dashboard' },
         { label: 'Employees', icon: 'groups', route: '/employees' },
+
     ];
 }

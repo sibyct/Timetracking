@@ -5,11 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'time-tracker-dashboard',
   standalone: true,
   imports: [CommonModule],
-  template: `
-  
-  `,
-  styles: [`
-    h1 { color: #333; }
-  `]
+  template: ``,
+  styles: []
 })
 export class DashboardComponent { }

@@ -13,7 +13,7 @@ export const routes: Routes = [
         component: MainLayoutComponent,
         children: [
             { path: APP_ROUTES.DASHBOARD, component: DashboardComponent },
-            { path: APP_ROUTES.PROJECTS, component: ProjectListComponent }
+            { path: APP_ROUTES.EMPLOYEES, component: ProjectListComponent }
         ]
     }
 ];
