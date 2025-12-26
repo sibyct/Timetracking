@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from '@features/auth';
 import { MainLayoutComponent } from '@layout/main-layout/main-layout.component';
 import { DashboardComponent } from '@features/dashboard/dashboard.component';
-import { ProjectListComponent } from '@features/projects/project-list/project-list.component';
+import { EmployeeListComponent } from '@features/employees/pages/employee-list/employee-list.component';
 import { APP_ROUTES } from '@shared/constants/routes';
 
 export const routes: Routes = [
@@ -13,7 +13,7 @@ export const routes: Routes = [
         component: MainLayoutComponent,
         children: [
             { path: APP_ROUTES.DASHBOARD, component: DashboardComponent },
-            { path: APP_ROUTES.EMPLOYEES, component: ProjectListComponent }
+            { path: APP_ROUTES.EMPLOYEES, component: EmployeeListComponent }
         ]
     }
 ];

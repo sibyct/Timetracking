@@ -3,7 +3,7 @@
     <div class="nav-list-item">
         <a mat-list-item [routerLink]="item.route" routerLinkActive="active-link"
             [matTooltip]="collapsed() ? item.label : ''" [matTooltipPosition]="'right'">
-            <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+            <mat-icon fontSet="material-icons-outlined" matListItemIcon>{{item.icon}}</mat-icon>
             <span>{{item.label}}</span>
         </a>
     </div>

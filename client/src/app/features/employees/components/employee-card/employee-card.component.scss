@@ -1,0 +1,58 @@
+.employee-card {
+    width: 300px;
+    border-radius: 16px;
+    padding: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+
+    .profile {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .profile-img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #e0e0e0;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            h3 {
+                margin: 0;
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+
+            .position {
+                font-size: .9rem;
+                color: #616161;
+            }
+
+            .dept {
+                font-size: .85rem;
+                color: #9e9e9e;
+            }
+
+            .email {
+                font-size: .8rem;
+                text-decoration: none;
+                color: #3f51b5;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    mat-card-actions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: .5rem;
+    }
+}
