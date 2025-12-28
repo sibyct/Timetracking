@@ -8,20 +8,11 @@ import morgan from "morgan";
 import rateLimit from "express-rate-limit";
 import { logger } from "./utils/loggers.js";
 
-export async function initializeApp() {
-    // Load environment variables from .env file
-    dotenv.config();
+function initializeRoutes(app: express.Application) {
+    app.use('/api/auth', authRoutes);
+}
 
-    if (!process.env.DB_URL) {
-        throw new Error("DB_URL environment variable is not set");
-    }
-
-    if (!process.env.JWT_SECRET) {
-        throw new Error("JWT_SECRET environment variable is not set");
-    }
-
-    const app = express();
-
+function initializeMiddleware(app: express.Application) {
     app.use(express.json());
 
     app.use(helmet());
@@ -42,10 +33,26 @@ export async function initializeApp() {
         legacyHeaders: false,
     }));
 
-    app.use('/api/auth', authRoutes);
+
+    initializeRoutes(app);
 
     // Error handling middleware
     app.use(errorMiddleware);
+}
 
+export async function initializeApp() {
+    // Load environment variables from .env file
+    dotenv.config();
+
+    if (!process.env.DB_URL) {
+        throw new Error("DB_URL environment variable is not set");
+    }
+
+    if (!process.env.JWT_SECRET) {
+        throw new Error("JWT_SECRET environment variable is not set");
+    }
+
+    const app = express();
+    initializeMiddleware(app);
     return app;
 }
