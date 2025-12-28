@@ -1,5 +1,5 @@
 import express from 'express';
-import authRoutes from './auth/auth.routes.js';
+import authRoutes from './modules/auth/auth.routes.js';
 import { errorMiddleware } from './middleware/error.middleware.js';
 import dotenv from "dotenv";
 import helmet from "helmet";

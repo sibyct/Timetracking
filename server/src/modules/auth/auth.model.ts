@@ -1,4 +1,4 @@
-import { pool } from "../configs/db.js";
+import { pool } from "../../configs/db.js";
 import { IUser } from "./auth.types.js";
 
 export const findUserByUsername = async (username: string): Promise<IUser | null> => {
