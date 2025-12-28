@@ -1,5 +1,13 @@
-<div class="content-wrapper">
+<!-- <div class="content-wrapper">
     <button mat-button color="primary">Add Employee</button>
+</div> -->
+<div class="employee-toolbar">
+    <div class="employee-title">
+        <span>Employee List</span>
+    </div>
+    <div class="employee-actions">
+        <button mat-flat-button color="primary">Add Employee</button>
+    </div>
 </div>
 <div class="employee-grid">
     @for (emp of employees; track emp.id) {
