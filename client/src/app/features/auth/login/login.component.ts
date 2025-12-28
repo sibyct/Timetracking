@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -7,7 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../core/services/auth.service';
+import { AuthService } from '@core/services/auth.service';
 
 @Component({
     selector: 'time-tracker-login',
@@ -27,11 +27,10 @@ import { AuthService } from '../../../core/services/auth.service';
 export class LoginComponent {
     protected readonly loginForm: FormGroup;
     protected hidePassword = true;
-
+    private fb = inject(FormBuilder);
+    private authService = inject(AuthService);
+    private router = inject(Router);
     constructor(
-        private fb: FormBuilder,
-        private authService: AuthService,
-        private router: Router
     ) {
         this.loginForm = this.fb.group({
             username: ['', [Validators.required, Validators.email]],

@@ -27,7 +27,8 @@
                     <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
                     <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
                         [attr.aria-label]="'Hide password'" type="button">
-                        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        <mat-icon fontSet="material-icons-outlined">{{hidePassword ? 'visibility_off' :
+                            'visibility'}}</mat-icon>
                     </button>
                     @if (loginForm.get('password')!.hasError('required')) {
                     <mat-error>
