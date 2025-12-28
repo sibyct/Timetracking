@@ -8,5 +8,5 @@ export const pool = new Pool({
 });
 
 pool.on('error', (err: Error) => {
-    logger.error('Pool error', err);
+    logger.error('Database connection error', err);
 });

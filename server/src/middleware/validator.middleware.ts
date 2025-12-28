@@ -11,8 +11,10 @@ export const validate =
                 next();
             } catch (err: any) {
                 const message = err.errors
-                    ? err.errors.map((e: any) => e.message).join(", ")
+                    ? err.errors
+                        .map((e: any) => e.message).join(", ")
                     : "Invalid request data";
+
                 next(createError(message, STATUS_CODES.BAD_REQUEST));
             }
         };
