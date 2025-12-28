@@ -21,7 +21,7 @@ export const errorMiddleware = (
     res: Response,
     next: NextFunction
 ) => {
-    logger.error("❌ ERROR:", err);
+    logger.error("ERROR:", err);
 
     const statusCode = err.statusCode || 500;
     const message =
