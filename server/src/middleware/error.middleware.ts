@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from "express";
+import { logger } from "../utils/loggers.js";
 
 export interface AppError extends Error {
     statusCode?: number;
@@ -20,7 +21,7 @@ export const errorMiddleware = (
     res: Response,
     next: NextFunction
 ) => {
-    console.error("❌ ERROR:", err);
+    logger.error("❌ ERROR:", err);
 
     const statusCode = err.statusCode || 500;
     const message =

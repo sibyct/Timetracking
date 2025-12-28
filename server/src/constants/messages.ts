@@ -12,4 +12,7 @@ export const ERROR_MESSAGES = {
     UNAUTHORIZED: "You do not have permission",
     INTERNAL_SERVER_ERROR: "Internal server error",
     BAD_REQUEST: "Bad request",
+    JWT_SECRET_NOT_FOUND: "JWT secret not found",
+    AUTHORIZATION_TOKEN_MISSING: "Authorization token missing",
+    INVALID_OR_EXPIRED_TOKEN: "Invalid or expired token",
 };
