@@ -1,12 +1,10 @@
 import { initializeApp } from './app.js';
 const PORT = process.env.PORT || 3000;
 import { logger } from "./utils/loggers.js";
+import http from 'http';
 
-async function startServer() {
-    const app = await initializeApp();
-    const server = app.listen(PORT, () => {
-        logger.info(`Server running on port ${PORT}`);
-    });
+// Register process events
+function registerProcessEvents(server: http.Server) {
 
     server.on('error', (err: NodeJS.ErrnoException) => {
         switch (err.code) {
@@ -21,6 +19,7 @@ async function startServer() {
                 break;
         }
     });
+
 
     process.on('SIGINT', () => {
         logger.info('Server shutting down...');
@@ -37,6 +36,22 @@ async function startServer() {
         logger.error('Unhandled Rejection:', reason);
         process.exit(1);
     });
+}
+
+// Start server
+async function startServer() {
+    try {
+        const app = await initializeApp();
+        const server = app.listen(PORT, () => {
+            logger.info(`Server running on port ${PORT}`);
+        });
+
+        registerProcessEvents(server);
+
+    } catch (error) {
+        logger.error('Failed to start server:', error);
+        process.exit(1);
+    }
 }
 
 startServer();
