@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { ZodType } from "zod";
-import { createError } from "./error.middleware.js";
-import { STATUS_CODES } from "../constants/statuscodes.js";
+import { createError } from "./error.middleware";
+import { STATUS_CODES } from "../constants/statuscodes";
 
 export const validate =
     (schema: ZodType<any>) =>

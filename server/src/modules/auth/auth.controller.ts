@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
-import { registerUser, loginUser } from "./auth.service.js";
-import { createError } from "../../middleware/error.middleware.js";
-import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "../../constants/messages.js";
-import { STATUS_CODES } from "../../constants/statuscodes.js";
+import { registerUser, loginUser } from "./auth.service";
+import { createError } from "../../middleware/error.middleware";
+import { ERROR_MESSAGES, SUCCESS_MESSAGES } from "../../constants/messages";
+import { STATUS_CODES } from "../../constants/statuscodes";
 
 export const register = async (req: Request, res: Response, next: NextFunction) => {
     try {

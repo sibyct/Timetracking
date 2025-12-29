@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import jwt, { JwtPayload } from "jsonwebtoken";
-import { createError } from "./error.middleware.js";
-import { ERROR_MESSAGES } from "../constants/messages.js";
-import { STATUS_CODES } from "../constants/statuscodes.js";
+import { createError } from "./error.middleware";
+import { ERROR_MESSAGES } from "../constants/messages";
+import { STATUS_CODES } from "../constants/statuscodes";
 
 interface AuthRequest extends Request {
     user?: string | JwtPayload; // optional property added to req

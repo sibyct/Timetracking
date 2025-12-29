@@ -2,8 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
-  "type": "module",
+  "main": "server.ts",
   "scripts": {
     "dev": "nodemon",
     "build": "tsc",

@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { findUserByUsername, createUser } from "./auth.model.js";
+import { findUserByUsername, createUser } from "./auth.model";
 
 export const registerUser = async (
     employeeId: number,

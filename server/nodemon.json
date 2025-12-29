@@ -5,12 +5,9 @@
     "ext": "ts,js,json",
     "ignore": [
         "dist",
-        "node_modules"
+        "node_modules",
+        "logs",
+        "src/**/*.spec.ts"
     ],
-    "exec": "node --loader ts-node/esm ./src/server.ts",
-    "delay": "1000",
-    "env": {
-        "NODE_ENV": "development",
-        "PORT": "3000"
-    }
+    "exec": "ts-node ./src/server.ts"
 }

@@ -1,7 +1,8 @@
-import { initializeApp } from './app.js';
+import { initializeApp } from './app';
 const PORT = process.env.PORT || 3000;
-import { logger } from "./utils/loggers.js";
+import { logger } from "./utils/loggers";
 import http from 'http';
+import dotenv from "dotenv";
 
 // Register process events
 function registerProcessEvents(server: http.Server) {

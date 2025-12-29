@@ -1,13 +1,14 @@
 import express from 'express';
-import authRoutes from './modules/auth/auth.routes.js';
-import { errorMiddleware } from './middleware/error.middleware.js';
+import authRoutes from './modules/auth/auth.routes';
+import { errorMiddleware } from './middleware/error.middleware';
 import dotenv from "dotenv";
 import helmet from "helmet";
 import cors from "cors";
 import morgan from "morgan";
 import rateLimit from "express-rate-limit";
-import { logger } from "./utils/loggers.js";
+import { logger } from "./utils/loggers";
 
+// Load environment variables from .env file
 function initializeRoutes(app: express.Application) {
     app.use('/api/auth', authRoutes);
 }
@@ -41,7 +42,6 @@ function initializeMiddleware(app: express.Application) {
 }
 
 export async function initializeApp() {
-    // Load environment variables from .env file
     dotenv.config();
 
     if (!process.env.DB_URL) {

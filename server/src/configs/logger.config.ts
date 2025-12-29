@@ -1,6 +1,6 @@
 import path from 'path';
 
-const logDir = path.join(__dirname, '..', 'logs');
+const logDir = path.join(__dirname, '..', '..', 'logs');
 
 export default {
     logDirectory: logDir,
