@@ -1,0 +1,79 @@
+/* Global utility classes for the Fast Hiring Angular app */
+
+@use 'variables' as vars;
+@use 'colors' as colors;
+
+/* Container with max width and horizontal padding */
+.container {
+    width: 100%;
+    max-width: vars.$container-max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: vars.$spacing-md;
+    padding-right: vars.$spacing-md;
+}
+
+/* Flex utilities */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Text utilities */
+.text-primary {
+    color: colors.$color-primary;
+}
+
+.text-muted {
+    color: colors.$color-text-muted;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Button utilities */
+.btn-primary {
+    background-color: colors.$color-primary;
+    color: #fff;
+    border: none;
+    padding: vars.$spacing-sm vars.$spacing-md;
+    border-radius: vars.$border-radius-sm;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: darken(colors.$color-primary, 10%);
+}
+
+/* Margin utilities */
+.mt-sm {
+    margin-top: vars.$spacing-sm;
+}
+
+.mb-sm {
+    margin-bottom: vars.$spacing-sm;
+}
+
+.mt-md {
+    margin-top: vars.$spacing-md;
+}
+
+.mb-md {
+    margin-bottom: vars.$spacing-md;
+}
+
+.mt-lg {
+    margin-top: vars.$spacing-lg;
+}
+
+.mb-lg {
+    margin-bottom: vars.$spacing-lg;
+}

@@ -1,12 +1,10 @@
 <div class="layout-container">
-    <time-tracker-header (toggleSidebar)="onToggleSidebar()"></time-tracker-header>
-
     <mat-sidenav-container class="sidenav-container">
         <mat-sidenav #sidenav mode="side" opened class="sidenav">
             <time-tracker-sidebar class="sidenav-content"></time-tracker-sidebar>
         </mat-sidenav>
-
         <mat-sidenav-content>
+            <time-tracker-header (toggleSidebar)="onToggleSidebar()"></time-tracker-header>
             <div class="content-wrapper">
                 <router-outlet></router-outlet>
             </div>

@@ -16,7 +16,7 @@ export const verifyToken = (req: AuthRequest, res: Response, next: NextFunction)
             return next(createError(ERROR_MESSAGES.AUTHORIZATION_TOKEN_MISSING, STATUS_CODES.UNAUTHORIZED));
         }
 
-        const token = authHeader.split(" ")[1];
+        const [_, token] = authHeader.split(" ");
         const secret = process.env.JWT_SECRET as string;
 
         if (!secret) {
@@ -24,10 +24,10 @@ export const verifyToken = (req: AuthRequest, res: Response, next: NextFunction)
         }
 
         // Verify token
-        const decoded = jwt.verify(token, secret);
+        const decoded = jwt.verify(token, secret, { algorithms: ['RS256'] });
         req.user = decoded; // attach payload to req.user
         next();
-    } catch (err) {
+    } catch (err: unknown) {
         return next(createError(ERROR_MESSAGES.INVALID_OR_EXPIRED_TOKEN, STATUS_CODES.UNAUTHORIZED));
     }
 };
