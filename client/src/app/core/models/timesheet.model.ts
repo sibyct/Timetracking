@@ -1,3 +1,5 @@
+export type TimesheetStatus = 'draft' | 'submitted' | 'approved' | 'rejected';
+
 export interface TimesheetEntry {
     id: string;
     date: Date;
@@ -11,6 +13,6 @@ export interface Timesheet {
     userId: string;
     startDate: Date;
     endDate: Date;
-    status: 'draft' | 'submitted' | 'approved' | 'rejected';
+    status: TimesheetStatus;
     entries: TimesheetEntry[];
 }

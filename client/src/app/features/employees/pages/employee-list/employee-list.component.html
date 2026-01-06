@@ -1,17 +1,13 @@
-<!-- <div class="content-wrapper">
-    <button mat-button color="primary">Add Employee</button>
-</div> -->
 <div class="employee-toolbar">
     <div class="employee-title">
         <span>Employee List</span>
     </div>
     <div class="employee-actions">
-        <button mat-flat-button color="primary">Add Employee</button>
+        <button mat-flat-button color="primary" (click)="openAddEmployeeDialog()">Add Employee</button>
     </div>
 </div>
-<div class="employee-grid">
-    @for (emp of employees; track emp.id) {
-    <time-tracker-employee-card [employee]="emp">
-    </time-tracker-employee-card>
+<div class="employee-container">
+    @for (employee of employees; track employee.id) {
+    <time-tracker-employee-card [employee]="employee" class="employee-card"></time-tracker-employee-card>
     }
 </div>

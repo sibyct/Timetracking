@@ -1,8 +1,7 @@
 .employee-card {
-    width: 300px;
-    border-radius: 16px;
     padding: 1rem;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
 
     .profile {
         display: flex;
@@ -10,8 +9,8 @@
         gap: 1rem;
 
         .profile-img {
-            width: 64px;
-            height: 64px;
+            width: 72px;
+            height: 72px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #e0e0e0;
@@ -24,17 +23,18 @@
 
             h3 {
                 margin: 0;
-                font-size: 1.1rem;
-                font-weight: 600;
+                font-size: 16px;
+                font-weight: 400;
+                color: #89bcec;
             }
 
             .position {
-                font-size: .9rem;
+                font-size: 14px;
                 color: #616161;
             }
 
             .dept {
-                font-size: .85rem;
+                font-size: 14px;
                 color: #9e9e9e;
             }
 

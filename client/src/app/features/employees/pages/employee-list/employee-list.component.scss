@@ -1,22 +1,38 @@
-.employee-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
 .employee-toolbar {
     display: flex;
-    padding: 12px;
     justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid #E5E5E5;
+    box-shadow: 0 2px 4px #E5E5E5;
+}
 
-    .employee-title {
-        display: flex;
-        align-items: center;
+.employee-title {
+    display: flex;
+    align-items: center;
 
-        span {
-            display: block;
-            font-size: 20px;
-            font-weight: 500;
-        }
+    span {
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        color: #7E8D9A;
+    }
+}
+
+.employee-actions {
+    display: flex;
+    align-items: center;
+}
+
+.employee-container {
+    padding: 12px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    overflow: auto;
+    height: calc(100vh - 150px);
+    grid-auto-rows: min-content;
+
+    .employee-card {
+        height: 140px;
     }
 }

@@ -7,9 +7,6 @@
             <h3>{{ employee()?.name }}</h3>
             <span class="position">{{ employee()?.position }}</span>
             <span class="dept">{{ employee()?.department }}</span>
-            <a [href]="'mailto:' + employee()?.email" class="email">
-                {{ employee()?.email }}
-            </a>
         </div>
     </div>
 </mat-card>

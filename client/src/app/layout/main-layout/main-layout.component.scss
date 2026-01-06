@@ -11,8 +11,9 @@
 }
 
 .sidenav {
-    width: 220px;
+    width: 70px;
     border-right: 1px solid rgba(0, 0, 0, 0.12);
+    background-color: #284155;
 }
 
 .sidenav-content {
@@ -21,5 +22,7 @@
 }
 
 .content-wrapper {
-    padding: 2rem;
+    width: 100%;
+    height: calc(100vh - 64px);
+    background-color: #EEF1F6;
 }
