@@ -2,22 +2,44 @@
 
 <mat-dialog-content>
     <form [formGroup]="userForm" class="user-form">
-        <mat-form-field>
+        <mat-form-field appearance="outline">
             <mat-label>First Name</mat-label>
-            <input matInput placeholder="First Name" />
+            <input matInput />
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
             <mat-label>Last Name</mat-label>
-            <input matInput placeholder="Last Name" />
+            <input matInput />
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="Email" />
+            <input matInput />
         </mat-form-field>
     </form>
+    <div>
+        <h3>Associate roles <span class="required">*</span></h3>
+        <div class="associate-roles-container">
+            <div>
+                <div class="employee-default">
+                    <mat-icon fontSet="material-icons-outlined">remove</mat-icon>
+                    <span>Employee Default</span>
+                </div>
+                <!-- <div>
+                    can see limited set of infomration of other employees
+                </div> -->
+            </div>
+            <div class="associate-roles">
+                <mat-icon fontSet="material-icons-outlined">add</mat-icon>
+                <span>Associate roles</span>
+            </div>
+            <div>
+                <span class="send-invite-label">Take me to a detailed page</span>
+            </div>`
+        </div>
+    </div>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+    <button mat-raised-button>Save</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Save & Send invite</button>
 </mat-dialog-actions>

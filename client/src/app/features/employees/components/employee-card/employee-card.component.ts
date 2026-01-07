@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -21,4 +21,5 @@ export interface Employee {
 })
 export class EmployeeCardComponent {
   employee = input<Employee>();
+  viewProfile = output<string | undefined>();
 }
