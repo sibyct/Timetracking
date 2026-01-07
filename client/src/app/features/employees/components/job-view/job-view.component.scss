@@ -1,0 +1,20 @@
+.job-view-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.job-view-info {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 12px;
+        color: #7E8D9A;
+    }
+
+    .value {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}

@@ -1,78 +1,110 @@
+//Example suggestions — adapt to your theming system / Material variables 
+$primary-color: #268feb;
+$error-color: #e29191;
+$muted-color: #7E8D9A;
+$font-size-sm: 0.75rem; // 12px
+$font-size-md: 0.875rem; // 14px
+$gap-sm: 0.5rem; // 8px
+$gap-md: 1.25rem; // 20px
+
+:host {
+
+    // Scope MDC dialog subtitle overrides to this component's host
+    h2 {
+        --mdc-dialog-subhead-size: 16px;
+        --mdc-dialog-subhead-weight: 500;
+        --mdc-dialog-subhead-color: $muted-color;
+    }
+}
+
 .user-form {
-    margin-top: 3px;
+    margin-top: 0.1875rem; // 3px -> ~0.1875rem (optional)
 
     mat-form-field {
         width: 100%;
     }
 }
 
-h2 {
-    --mdc-dialog-subhead-size: 16px;
-    --mdc-dialog-subhead-weight: 500;
-    --mdc-dialog-subhead-color: #7E8D9A;
-}
-
 .associate-roles-container {
     display: flex;
-    gap: 20px;
+    gap: $gap-md;
     flex-direction: column;
     align-items: flex-start;
 }
 
 .required {
-    color: red;
+    color: $error-color; // use theme/error color
 }
 
+/* Interactive label */
 .send-invite-label {
-    font-size: 12px;
+    font-size: $font-size-sm;
     font-weight: 400;
-    color: #268feb;
+    color: $primary-color;
     cursor: pointer;
+
+    &:focus-visible {
+        outline: 2px solid lighten($primary-color, 30%);
+        outline-offset: 2px;
+    }
 }
 
+/* Shared icon style to avoid duplication */
+.circular-icon {
+    box-sizing: border-box; // ensures borders included in width/height
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 1rem; // 16px
+    height: 1rem; // 16px
+    font-size: 0.875rem; // 14px
+}
+
+/* Employee default row */
 .employee-default {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: $gap-sm;
     cursor: pointer;
-    font-size: 14px;
+    font-size: $font-size-md;
     font-weight: 400;
 
     mat-icon {
-        color: rgb(226, 145, 145);
-        border-radius: 50%;
-        width: 16px;
-        height: 16px;
-        border: 3px solid rgb(226, 145, 145);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
+        @extend .circular-icon;
+        color: $error-color;
+        border: 3px solid $error-color;
+    }
+
+    // If this is interactive, ensure keyboard support in template (tabindex, keydown)
+    &:focus-visible {
+        outline: 2px dashed rgba(0, 0, 0, 0.12);
+        outline-offset: 2px;
     }
 }
 
+/* Associate roles row */
 .associate-roles {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: $gap-sm;
     cursor: pointer;
 
     mat-icon {
-        color: #268feb;
-        border-radius: 50%;
-        width: 16px;
-        height: 16px;
-        border: 3px solid #268feb;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 14px;
+        @extend .circular-icon;
+        color: $primary-color;
+        border: 3px solid $primary-color;
     }
 
     span {
-        font-size: 14px;
+        font-size: $font-size-md;
         font-weight: 400;
-        color: #268feb;
-        cursor: pointer;
+        color: $primary-color;
+        /* no need to repeat cursor: pointer here if parent already has it */
+    }
+
+    &:focus-visible {
+        outline: 2px dashed rgba(0, 0, 0, 0.12);
+        outline-offset: 2px;
     }
 }

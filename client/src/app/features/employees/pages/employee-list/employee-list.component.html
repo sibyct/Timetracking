@@ -8,7 +8,7 @@
 </div>
 <div class="employee-container">
     @for (employee of employees; track employee.id) {
-    <time-tracker-employee-card [employee]="employee" (viewProfile)="openProfileView()"
+    <time-tracker-employee-card [employee]="employee" (viewProfile)="openProfileView(employee.id)"
         class="employee-card"></time-tracker-employee-card>
     }
 </div>
