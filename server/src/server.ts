@@ -2,7 +2,6 @@ import { initializeApp } from './app';
 const PORT = process.env.PORT || 3000;
 import { logger } from "./utils/loggers";
 import http from 'http';
-import dotenv from "dotenv";
 
 // Register process events
 function registerProcessEvents(server: http.Server) {
@@ -39,14 +38,15 @@ function registerProcessEvents(server: http.Server) {
     });
 }
 
+function appStarted() {
+    logger.info(`Server running on port ${PORT}`);
+}
+
 // Start server
 async function startServer() {
     try {
         const app = await initializeApp();
-        const server = app.listen(PORT, () => {
-            logger.info(`Server running on port ${PORT}`);
-        });
-
+        const server = app.listen(PORT, appStarted);
         registerProcessEvents(server);
 
     } catch (error) {

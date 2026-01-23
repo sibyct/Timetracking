@@ -1,4 +1,10 @@
+$viewport-small: 575px;
+$viewport-medium: 768px;
+$viewport-large: 992px;
+$viewport-xlarge: 1200px;
+
 // Spacing
+$spacing-xs: 4px;
 $spacing-sm: 8px;
 $spacing-md: 16px;
 $spacing-lg: 20px;
@@ -9,8 +15,11 @@ $login-card-width: 400px;
 $login-card-radius: 12px;
 
 // Typography
+$font-size-xs: 12px;
 $font-size-sm: 14px;
 $font-size-md: 16px;
 $font-size-lg: 24px;
+$font-size-xl: 32px;
+$font-size-xxl: 48px;
 
 $nav-item-width: 60px;

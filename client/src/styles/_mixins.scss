@@ -1,0 +1,8 @@
+@use 'variables' as vars;
+
+
+@mixin viewport-small {
+    @media screen and (max-width: vars.$viewport-xlarge) {
+        @content;
+    }
+}
