@@ -1,7 +1,7 @@
 /* Global utility classes for the Fast Hiring Angular app */
 
-@use 'variables' as vars;
-@use 'colors' as colors;
+@use '../abstracts/variables' as vars;
+@use '../abstracts/colors' as colors;
 
 /* Container with max width and horizontal padding */
 .container {
@@ -25,6 +25,11 @@
     flex-direction: column;
 }
 
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
 /* Text utilities */
 .text-primary {
     color: colors.$color-primary;
@@ -36,21 +41,6 @@
 
 .text-center {
     text-align: center;
-}
-
-/* Button utilities */
-.btn-primary {
-    background-color: colors.$color-primary;
-    color: #fff;
-    border: none;
-    padding: vars.$spacing-sm vars.$spacing-md;
-    border-radius: vars.$border-radius-sm;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.btn-primary:hover {
-    background-color: darken(colors.$color-primary, 10%);
 }
 
 /* Margin utilities */

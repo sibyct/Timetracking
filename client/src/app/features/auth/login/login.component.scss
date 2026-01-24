@@ -1,5 +1,5 @@
-@use '../../../../styles/variables' as vars;
-@use '../../../../styles/colors' as colors;
+@use "../../../../styles/abstracts" as vars;
+@use "../../../../styles/abstracts/colors" as colors;
 
 .login-container {
     display: flex;

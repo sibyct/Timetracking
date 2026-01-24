@@ -1,4 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+/* Main SCSS entry point */
+
+// 1. Abstracts (Variables, Mixins, etc.)
+@use 'styles/abstracts' as *;
+
+// 2. Base styles (Reset, Typography, etc.)
+@use 'styles/base';
+
+// 3. Layout
+@use 'styles/layout';
+
+// 4. Components
+@use 'styles/components';
+
+// 5. Pages
+@use 'styles/pages';
 
 html,
 body {
@@ -6,31 +21,21 @@ body {
 }
 
 body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
     background-color: #ffffff;
 }
 
-/* styles.scss */
-
-/* 1. Define the custom panel class */
+/* Material Dialog Customization */
 .right-side-dialog {
-
-    /* This ensures the dialog container doesn't block the whole screen with center alignment */
     .mat-mdc-dialog-container {
         transform: translateX(0);
-        /* Start off-screen to the right */
         transition: transform 300ms cubic-bezier(0.25, 0.8, 0.25, 1) !important;
     }
 }
 
-// /* 2. State when the dialog is actually opened */
 .cdk-overlay-pane-appearing .right-side-dialog .mat-mdc-dialog-container {
     transform: translateX(0);
-    /* Slide into view */
 }
 
-/* 3. Handle the exit animation */
 .cdk-overlay-pane-hidden .right-side-dialog .mat-mdc-dialog-container {
     transform: translateX(100%);
 }

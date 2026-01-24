@@ -1,11 +1,11 @@
-<div class="employee-toolbar">
+<time-tracker-action-bar>
     <div class="employee-title">
         <span>Employee List</span>
     </div>
     <div class="employee-actions">
         <button mat-flat-button color="primary" (click)="openAddEmployeeDialog()">Add Employee</button>
     </div>
-</div>
+</time-tracker-action-bar>
 <div class="employee-container">
     @for (employee of employees; track employee.id) {
     <time-tracker-employee-card [employee]="employee" (viewProfile)="openProfileView(employee.id)"

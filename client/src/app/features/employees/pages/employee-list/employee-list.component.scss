@@ -1,9 +1,6 @@
 .employee-toolbar {
     display: flex;
     justify-content: space-between;
-    padding: 12px;
-    border-bottom: 1px solid #E5E5E5;
-    box-shadow: 0 2px 4px #E5E5E5;
 }
 
 .employee-title {
@@ -16,11 +13,6 @@
         font-weight: 500;
         color: #7E8D9A;
     }
-}
-
-.employee-actions {
-    display: flex;
-    align-items: center;
 }
 
 .employee-container {
