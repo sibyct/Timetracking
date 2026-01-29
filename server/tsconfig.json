@@ -10,7 +10,25 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@configs/*": [
+        "configs/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@middleware/*": [
+        "middleware/*"
+      ],
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@constants/*": [
+        "constants/*"
+      ]
+    }
   },
   "include": [
     "src"
