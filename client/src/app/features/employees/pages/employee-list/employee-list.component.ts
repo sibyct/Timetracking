@@ -5,10 +5,11 @@ import { AddEmployeeComponent } from '@features/employees/components/add-employe
 import { MatDialog } from '@angular/material/dialog';
 import { ActionBarComponent } from '@shared/components/action-bar/action-bar.component';
 import { Router } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
 @Component({
   selector: 'time-tracker-employee-list',
   standalone: true,
-  imports: [EmployeeCardComponent, MatButtonModule, AddEmployeeComponent, ActionBarComponent],
+  imports: [EmployeeCardComponent, MatButtonModule, AddEmployeeComponent, ActionBarComponent, MatToolbarModule],
   templateUrl: './employee-list.component.html',
   styleUrl: './employee-list.component.scss'
 })

@@ -1,5 +1,6 @@
+$employee-card-height: 140px;
+
 .employee-toolbar {
-    display: flex;
     justify-content: space-between;
 }
 
@@ -25,7 +26,7 @@
     grid-auto-rows: min-content;
 
     .employee-card {
-        height: 140px;
+        height: $employee-card-height;
         cursor: pointer;
     }
 }

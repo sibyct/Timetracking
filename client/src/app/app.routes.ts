@@ -16,7 +16,7 @@ export const routes: Routes = [
             { path: APP_ROUTES.DASHBOARD, component: DashboardComponent },
             { path: APP_ROUTES.EMPLOYEES, redirectTo: APP_ROUTES.EMPLOYEES + '/list' },
             { path: APP_ROUTES.EMPLOYEES + '/list', component: EmployeeListComponent },
-            { path: APP_ROUTES.EMPLOYEES + '/profile/:id', component: ProfileViewComponent }
+            { path: APP_ROUTES.EMPLOYEES + '/profile/:employeeId', component: ProfileViewComponent }
         ]
     }
 ];

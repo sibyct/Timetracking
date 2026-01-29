@@ -52,7 +52,7 @@ export class LoginComponent {
         }
 
         const { username, password } = this.loginForm.getRawValue();
-
+        this.router.navigate(['employees/list']);
         this.authService.login(username, password)
             .pipe(takeUntilDestroyed(this.destroyRef))
             .subscribe({
