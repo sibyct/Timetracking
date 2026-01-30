@@ -1,5 +1,5 @@
-import { pool } from "../../configs/database.config";
-import { IUser } from "./auth.types";
+import { pool } from "@configs/database.config";
+import { IUser } from "@modules/auth/auth.types";
 
 export const findUserByUsername = async (username: string): Promise<IUser | null> => {
     const result = await pool.query(

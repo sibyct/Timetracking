@@ -1,11 +1,14 @@
 import { Component, inject } from '@angular/core';
-import { EmployeeCardComponent, Employee } from '@features/employees/components/employee-card/employee-card.component';
 import { MatButtonModule } from '@angular/material/button';
-import { AddEmployeeComponent } from '@features/employees/components/add-employee/add-employee.component';
 import { MatDialog } from '@angular/material/dialog';
-import { ActionBarComponent } from '@shared/components/action-bar/action-bar.component';
 import { Router } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
+
+import { ActionBarComponent } from '@shared/components/action-bar/action-bar.component';
+import { EmployeeCardComponent, Employee } from '@features/employees/components/employee-card/employee-card.component';
+import { AddEmployeeComponent } from '@features/employees/components/add-employee/add-employee.component';
+import { APP_ROUTES } from '@shared/constants/routes';
+
 @Component({
   selector: 'time-tracker-employee-list',
   standalone: true,
@@ -147,6 +150,6 @@ export class EmployeeListComponent {
   }
 
   protected openProfileView(id: string) {
-    this.router.navigate([`/employees/profile/${id}`]);
+    this.router.navigate([`${APP_ROUTES.EMPLOYEES}/${id}`]);
   }
 }

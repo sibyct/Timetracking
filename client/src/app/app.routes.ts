@@ -14,9 +14,9 @@ export const routes: Routes = [
         component: MainLayoutComponent,
         children: [
             { path: APP_ROUTES.DASHBOARD, component: DashboardComponent },
-            { path: APP_ROUTES.EMPLOYEES, redirectTo: APP_ROUTES.EMPLOYEES + '/list' },
-            { path: APP_ROUTES.EMPLOYEES + '/list', component: EmployeeListComponent },
-            { path: APP_ROUTES.EMPLOYEES + '/profile/:employeeId', component: ProfileViewComponent }
+            { path: APP_ROUTES.EMPLOYEES, component: EmployeeListComponent },
+            { path: APP_ROUTES.EMPLOYEES + '/:employeeId', component: ProfileViewComponent }
         ]
-    }
+    },
+    { path: '**', redirectTo: APP_ROUTES.LOGIN }
 ];

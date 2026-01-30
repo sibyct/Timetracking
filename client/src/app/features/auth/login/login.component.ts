@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AuthService } from '@core/services/auth.service';
 import { LoggerService } from '@core/services/logger.service';
+import { APP_ROUTES } from '@shared/constants/routes';
 
 @Component({
     selector: 'time-tracker-login',
@@ -52,12 +53,12 @@ export class LoginComponent {
         }
 
         const { username, password } = this.loginForm.getRawValue();
-        this.router.navigate(['employees/list']);
+        this.router.navigate([APP_ROUTES.EMPLOYEES]);
         this.authService.login(username, password)
             .pipe(takeUntilDestroyed(this.destroyRef))
             .subscribe({
                 next: (response) => {
-                    this.router.navigate(['employees']);
+                    this.router.navigate([APP_ROUTES.EMPLOYEES]);
                 },
                 error: (error) => {
                     this.logger.error('Login failed:', error);

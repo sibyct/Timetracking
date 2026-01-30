@@ -1,7 +1,20 @@
 import { initializeApp } from './app';
 const PORT = process.env.PORT || 3000;
-import { logger } from "./utils/loggers";
+import { logger } from "@utils/loggers";
 import http from 'http';
+import { pool } from "@configs/database.config";
+
+
+// Shutdown server gracefully
+async function shutdownServer(server: http.Server) {
+    logger.info('Server shutting down...');
+    await pool.end();
+    server.close(() => process.exit(0));
+}
+
+function appStarted() {
+    logger.info(`Server running on port ${PORT}`);
+}
 
 // Register process events
 function registerProcessEvents(server: http.Server) {
@@ -20,12 +33,21 @@ function registerProcessEvents(server: http.Server) {
         }
     });
 
-
-    process.on('SIGINT', () => {
-        logger.info('Server shutting down...');
-        server.close(() => process.exit(0));
+    pool.on('connect', () => {
+        logger.info('Database connected successfully');
     });
 
+    pool.on('error', (err: Error) => {
+        logger.error('Database connection error', err);
+    });
+
+    process.on('SIGTERM', async () => {
+        await shutdownServer(server);
+    });
+
+    process.on('SIGINT', async () => {
+        await shutdownServer(server);
+    });
 
     process.on('uncaughtException', (err) => {
         logger.error('Uncaught Exception:', err);
@@ -36,10 +58,6 @@ function registerProcessEvents(server: http.Server) {
         logger.error('Unhandled Rejection:', reason);
         process.exit(1);
     });
-}
-
-function appStarted() {
-    logger.info(`Server running on port ${PORT}`);
 }
 
 // Start server
