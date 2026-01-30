@@ -1,9 +1,9 @@
-<mat-card class="employee-card" (click)="viewProfile.emit(employee()?.id)">
-    <div class="profile">
+<mat-card class="shadow-sm w-full h-full p-3" (click)="viewProfile.emit(employee()?.id)">
+    <div class="flex items-center gap-4 w-full h-full">
         <img [src]="employee()?.photo || 'assets/images/default-user.png'" [alt]="employee()?.name"
             class="profile-img" />
 
-        <div class="info">
+        <div class="info flex flex-col gap-2">
             <h3>{{ employee()?.name }}</h3>
             <span class="position">{{ employee()?.position }}</span>
             <span class="dept">{{ employee()?.department }}</span>

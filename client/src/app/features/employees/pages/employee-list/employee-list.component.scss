@@ -1,32 +1,18 @@
+@use "abstracts/colors" as *;
+
 $employee-card-height: 140px;
 
-.employee-toolbar {
-    justify-content: space-between;
-}
-
 .employee-title {
-    display: flex;
-    align-items: center;
-
-    span {
-        display: block;
-        font-size: 16px;
-        font-weight: 500;
-        color: #7E8D9A;
-    }
+    color: $text-secondary;
 }
 
 .employee-container {
-    padding: 12px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    overflow: auto;
     height: calc(100vh - 150px);
     grid-auto-rows: min-content;
 
     .employee-card {
         height: $employee-card-height;
-        cursor: pointer;
     }
 }

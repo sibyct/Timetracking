@@ -1,28 +1,15 @@
-@use "../../../styles/abstracts" as var;
+@use "abstracts" as *;
 
-.layout-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.sidenav-container {
-    flex: 1;
-}
+$sidebar-width: 70px;
+$topbar-height: 64px;
 
 .sidenav {
-    width: 70px;
-    border-right: 1px solid rgba(0, 0, 0, 0.12);
-    background-color: #284155;
-}
-
-.sidenav-content {
-    width: 100%;
-    height: 100%;
+    width: $sidebar-width;
+    border-right: $border-medium;
+    background-color: $bg-sidebar;
 }
 
 .content-wrapper {
-    width: 100%;
-    height: calc(100vh - 64px);
-    background-color: #EEF1F6;
+    height: calc(100vh - $topbar-height);
+    background-color: $bg-tertiary;
 }

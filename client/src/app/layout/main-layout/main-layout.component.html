@@ -1,11 +1,11 @@
-<div class="layout-container">
-    <mat-sidenav-container class="sidenav-container">
+<div class="flex flex-col h-screen">
+    <mat-sidenav-container class="flex-1">
         <mat-sidenav #sidenav mode="side" opened class="sidenav">
-            <time-tracker-sidebar class="sidenav-content"></time-tracker-sidebar>
+            <time-tracker-sidebar class="w-full h-full"></time-tracker-sidebar>
         </mat-sidenav>
         <mat-sidenav-content>
             <time-tracker-header (toggleSidebar)="onToggleSidebar()"></time-tracker-header>
-            <div class="content-wrapper">
+            <div class="w-full content-wrapper">
                 <router-outlet></router-outlet>
             </div>
         </mat-sidenav-content>

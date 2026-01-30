@@ -1,23 +1,6 @@
+@use "abstracts/colors" as *;
+
 .header-toolbar {
-    display: flex;
-    direction: row;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(237, 227, 227, 0.1);
-    z-index: 2;
-    background-color: hwb(0 100% 0%);
-}
-
-.app-icon {
-    width: 100px;
-    height: 100%;
-    background-color: #343F4F;
-}
-
-.spacer {
-    flex: 1 1 auto;
-}
-
-.header-title {
-    margin-left: 8px;
-    font-weight: 500;
+    box-shadow: $shadow-md;
+    background-color: $bg-primary;
 }

@@ -1,12 +1,16 @@
+@use "abstracts" as *;
+
+$icon-width: 16px;
+$icon-height: 16px;
+$icon-border: 2px;
+
 .profile-card-container {
-    box-shadow: 0 2px 4px #E5E5E5;
-    background-color: #fff;
-    position: relative;
+    background-color: $bg-primary;
 }
 
 .profile-img-container {
     height: 90px;
-    background-color: #352d28;
+    background-color: $secondary-500;
 
     img {
         position: absolute;
@@ -19,47 +23,30 @@
 }
 
 .profile-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
     padding: 60px 20px 20px 20px;
 
     h3 {
         margin: 0;
         font-size: 18px;
         font-weight: 500;
-        color: #60727F
+        color: $neutral-500
     }
 }
 
-.profile-info-details {
-    margin-top: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.employee-default {
 
-    .employee-default {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 16px;
-        font-weight: 400;
-
-        &>.label {
-            color: #5299DA;
-        }
-
-        mat-icon {
-            //color: rgb(226, 145, 145);
-            border-radius: 50%;
-            width: 16px;
-            height: 16px;
-            border: 3px solid rgb(144, 139, 139);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-        }
+    .label {
+        color: $primary-300;
     }
 
+    mat-icon {
+        border-radius: 50%;
+        width: $icon-width;
+        height: $icon-height;
+        border: $icon-border solid $neutral-400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+    }
 }

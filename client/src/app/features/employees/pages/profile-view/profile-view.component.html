@@ -1,25 +1,17 @@
-<div class="profile-toolbar">
-    <div class="profile-title">
-        <span>Employee Profile</span>
-    </div>
-    <div class="profile-actions">
-        <button mat-flat-button color="primary">Edit Profile</button>
-    </div>
-</div>
-<section class="profile-content">
-    <div class="profile-info">
-        <time-tracker-profile-card></time-tracker-profile-card>
-    </div>
-    <div class="profile-details">
-        <mat-tab-group>
-            <mat-tab label="Job"><time-tracker-job-view></time-tracker-job-view></mat-tab>
-            <mat-tab label="Personal"></mat-tab>
-            <mat-tab label="Employment & Education"></mat-tab>
-            <mat-tab label="Compensation"></mat-tab>
-            <mat-tab label="Time off"></mat-tab>
-            <mat-tab label="Files"></mat-tab>
-            <mat-tab label="Notes"></mat-tab>
-            <mat-tab label="History"></mat-tab>
-        </mat-tab-group>
-    </div>
+<mat-toolbar class="justify-between">
+    <span class="text-base font-medium">Employee Profile</span>
+    <button mat-flat-button color="primary">Edit Profile</button>
+</mat-toolbar>
+<section class="profile-content p-4 flex flex-row flex-1 gap-4">
+    <time-tracker-profile-card class="profile-info"></time-tracker-profile-card>
+    <mat-tab-group class="profile-details flex-1">
+        <mat-tab label="Job"><time-tracker-job-view></time-tracker-job-view></mat-tab>
+        <mat-tab label="Personal"></mat-tab>
+        <mat-tab label="Employment & Education"></mat-tab>
+        <mat-tab label="Compensation"></mat-tab>
+        <mat-tab label="Time off"></mat-tab>
+        <mat-tab label="Files"></mat-tab>
+        <mat-tab label="Notes"></mat-tab>
+        <mat-tab label="History"></mat-tab>
+    </mat-tab-group>
 </section>

@@ -1,9 +1,9 @@
-<div class="nav-top">
+<div class="nav-top w-full">
     <!-- <img src="" alt=""> -->
 </div>
-<mat-nav-list class="nav-list-container">
+<mat-nav-list class="flex flex-col">
     @for (item of navItems; track item.label) {
-    <div class="nav-list-item">
+    <div class="nav-list-item w-full flex items-center">
         <a mat-list-item [routerLink]="item.route" routerLinkActive="active-link"
             [matTooltip]="collapsed() ? item.label : ''" [matTooltipPosition]="'right'">
             <mat-icon fontSet="material-icons-outlined" matListItemIcon>{{item.icon}}</mat-icon>

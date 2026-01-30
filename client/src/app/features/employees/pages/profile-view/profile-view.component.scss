@@ -1,47 +1,16 @@
-@use '../../../../../styles/abstracts/mixins' as mixins;
-
-.profile-toolbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px;
-    border-bottom: 1px solid #E5E5E5;
-    box-shadow: 0 2px 4px #E5E5E5;
-}
+@use 'abstracts' as *;
 
 .profile-title {
-    display: flex;
-    align-items: center;
-
-    span {
-        display: block;
-        font-size: 16px;
-        font-weight: 500;
-        color: #7E8D9A;
-    }
+    color: $text-secondary;
 }
 
 .profile-content {
-    padding: 12px;
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    gap: 12px;
 
     .profile-info {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
         width: 20%;
     }
 
-    .profile-details {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        flex: 1;
-    }
-
-    @include mixins.respond-to('md') {
+    @include respond-to('md') {
         flex-direction: column;
         gap: 12px;
 

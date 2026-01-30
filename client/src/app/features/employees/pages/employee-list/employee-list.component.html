@@ -1,14 +1,14 @@
-<mat-toolbar class="employee-toolbar">
-    <div class="employee-title">
-        <span>Employee List</span>
+<mat-toolbar class="justify-between">
+    <div class="employee-title text-base font-medium">
+        Employee List
     </div>
     <div class="employee-actions">
         <button mat-flat-button color="primary" (click)="openAddEmployeeDialog()">Add Employee</button>
     </div>
 </mat-toolbar>
-<div class="employee-container">
+<div class="employee-container p-4 gap-4 overflow-auto">
     @for (employee of employees; track employee.id) {
     <time-tracker-employee-card [employee]="employee" (viewProfile)="openProfileView(employee.id)"
-        class="employee-card"></time-tracker-employee-card>
+        class="employee-card cursor-pointer"></time-tracker-employee-card>
     }
 </div>
