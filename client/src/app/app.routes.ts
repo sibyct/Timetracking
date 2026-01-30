@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
+
 import { LoginComponent } from '@features/auth';
 import { MainLayoutComponent } from '@layout/main-layout/main-layout.component';
 import { DashboardComponent } from '@features/dashboard/dashboard.component';
-import { EmployeeListComponent } from '@features/employees';
 import { APP_ROUTES } from '@shared/constants/routes';
-import { ProfileViewComponent } from '@features/employees/pages/profile-view/profile-view.component';
+import { ProfileViewComponent, EmployeeListComponent } from '@features/employees';
 
 export const routes: Routes = [
     { path: '', redirectTo: APP_ROUTES.LOGIN, pathMatch: 'full' },

@@ -15,6 +15,9 @@
 // 5. Pages
 @use 'styles/pages';
 
+// 6. Theme
+@use 'styles/theme';
+
 html,
 body {
     height: 100%;

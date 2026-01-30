@@ -1,0 +1,61 @@
+// ============================================================================
+// SPACING SYSTEM
+// ============================================================================
+
+// Base spacing unit (typically 4px or 8px)
+$spacing-unit: 0.25rem; // 4px
+
+// SPACING SCALE (4px increment)
+$spacing-0: 0;
+$spacing-1: $spacing-unit; // 4px
+$spacing-2: $spacing-unit * 2; // 8px
+$spacing-3: $spacing-unit * 3; // 12px
+$spacing-4: $spacing-unit * 4; // 16px
+$spacing-5: $spacing-unit * 5; // 20px
+$spacing-6: $spacing-unit * 6; // 24px
+$spacing-8: $spacing-unit * 8; // 32px
+$spacing-10: $spacing-unit * 10; // 40px
+$spacing-12: $spacing-unit * 12; // 48px
+$spacing-16: $spacing-unit * 16; // 64px
+$spacing-20: $spacing-unit * 20; // 80px
+$spacing-24: $spacing-unit * 24; // 96px
+
+// SEMANTIC SPACING (named aliases)
+$spacing-xs: $spacing-2; // 8px
+$spacing-sm: $spacing-4; // 16px
+$spacing-md: $spacing-6; // 24px
+$spacing-lg: $spacing-8; // 32px
+$spacing-xl: $spacing-12; // 48px
+$spacing-2xl: $spacing-16; // 64px
+$spacing-3xl: $spacing-24; // 96px
+
+// SPACING MAP (for loops/utilities)
+$spacing-map: (
+    '0': $spacing-0,
+    '1': $spacing-1,
+    '2': $spacing-2,
+    '3': $spacing-3,
+    '4': $spacing-4,
+    '5': $spacing-5,
+    '6': $spacing-6,
+    '8': $spacing-8,
+    '10': $spacing-10,
+    '12': $spacing-12,
+    '16': $spacing-16,
+    '20': $spacing-20,
+    '24': $spacing-24
+);
+
+// COMPONENT-SPECIFIC SPACING
+$component-padding-sm: $spacing-sm;
+$component-padding-md: $spacing-md;
+$component-padding-lg: $spacing-lg;
+
+$component-margin-sm: $spacing-sm;
+$component-margin-md: $spacing-md;
+$component-margin-lg: $spacing-lg;
+
+// SECTION SPACING
+$section-padding-mobile: $spacing-lg;
+$section-padding-tablet: $spacing-xl;
+$section-padding-desktop: $spacing-2xl;

@@ -41,7 +41,7 @@
         flex: 1;
     }
 
-    @include mixins.viewport-small {
+    @include mixins.respond-to('md') {
         flex-direction: column;
         gap: 12px;
 

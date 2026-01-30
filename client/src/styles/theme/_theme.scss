@@ -1,0 +1,60 @@
+@use '@angular/material' as mat;
+@use '../abstracts/colors' as colors;
+@use '../abstracts/typography' as typography;
+
+$typography: mat.define-typography-config($font-family: typography.$font-family-base,
+        $headline-1: mat.define-typography-level(96px, 96px, 300),
+        $headline-2: mat.define-typography-level(60px, 60px, 300),
+        $headline-3: mat.define-typography-level(48px, 52px, 400),
+        $headline-4: mat.define-typography-level(34px, 40px, 400),
+
+        $body-1: mat.define-typography-level(16px, 24px, 400),
+        $body-2: mat.define-typography-level(14px, 20px, 400),
+
+        $button: mat.define-typography-level(14px, 14px, 500));
+
+/* Custom primary palette */
+$brand-primary-palette: (
+    50: colors.$primary-50,
+    100: colors.$primary-100,
+    200: colors.$primary-200,
+    300: colors.$primary-300,
+    400: colors.$primary-400,
+    500: colors.$primary-500,
+    600: colors.$primary-600,
+    700: colors.$primary-700,
+    800: colors.$primary-800,
+    900: colors.$primary-900,
+    contrast: (50: black,
+        100: black,
+        200: black,
+        300: black,
+        400: black,
+        500: white,
+        600: white,
+        700: white,
+        800: white,
+        900: white,
+    )
+);
+
+/* Accent palette */
+$accent-palette: mat.define-palette(mat.$amber-palette, 500, 100, 400);
+
+/* Warn palette */
+$warn-palette: mat.define-palette(mat.$red-palette);
+
+/* Primary palette */
+$primary-palette: mat.define-palette($brand-primary-palette);
+
+/* Theme object */
+$theme: mat.define-light-theme((color: (primary: $primary-palette,
+                accent: $accent-palette,
+                warn: $warn-palette,
+            ),
+            typography: $typography,
+            density: 0));
+
+/* Apply Material styles */
+@include mat.core();
+@include mat.all-component-themes($theme);

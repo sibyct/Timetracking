@@ -1,8 +1,149 @@
+// ============================================================================
+// TYPOGRAPHY BASE STYLES
+// ============================================================================
 @use '../abstracts' as *;
 
-body {
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family-heading;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-tight;
+    color: $text-primary;
+    margin-bottom: $spacing-md;
+}
+
+h1 {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+
+    @include respond-to('md') {
+        font-size: $font-size-5xl;
+    }
+}
+
+h2 {
+    font-size: $font-size-3xl;
+
+    @include respond-to('md') {
+        font-size: $font-size-4xl;
+    }
+}
+
+h3 {
+    font-size: $font-size-2xl;
+
+    @include respond-to('md') {
+        font-size: $font-size-3xl;
+    }
+}
+
+h4 {
+    font-size: $font-size-xl;
+
+    @include respond-to('md') {
+        font-size: $font-size-2xl;
+    }
+}
+
+h5 {
+    font-size: $font-size-lg;
+
+    @include respond-to('md') {
+        font-size: $font-size-xl;
+    }
+}
+
+h6 {
+    font-size: $font-size-base;
+
+    @include respond-to('md') {
+        font-size: $font-size-lg;
+    }
+}
+
+// Paragraphs
+p {
+    margin-bottom: $spacing-md;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Links
+a {
+    color: $primary-500;
+    transition: color $duration-fast;
+
+    &:hover {
+        color: $primary-600;
+    }
+
+    &:active {
+        color: $primary-700;
+    }
+}
+
+// Strong & Bold
+strong,
+b {
+    font-weight: $font-weight-semibold;
+}
+
+// Emphasis
+em,
+i {
+    font-style: italic;
+}
+
+// Small text
+small {
+    font-size: $font-size-sm;
+}
+
+// Code
+code {
+    font-family: $font-family-mono;
+    font-size: 0.9em;
+    background-color: $neutral-100;
+    padding: 0.125rem 0.25rem;
+    border-radius: $radius-sm;
+    color: $error-700;
+}
+
+pre {
+    font-family: $font-family-mono;
+    background-color: $neutral-900;
+    color: $neutral-50;
+    padding: $spacing-md;
+    border-radius: $radius-md;
+    overflow-x: auto;
+    margin-bottom: $spacing-md;
+
+    code {
+        background: none;
+        padding: 0;
+        color: inherit;
+    }
+}
+
+// Blockquote
+blockquote {
+    border-left: 4px solid $primary-500;
+    padding-left: $spacing-md;
+    margin: $spacing-lg 0;
+    font-style: italic;
+    color: $text-secondary;
+}
+
+// Horizontal rule
+hr {
+    border: none;
+    border-top: 1px solid $border-light;
+    margin: $spacing-xl 0;
 }

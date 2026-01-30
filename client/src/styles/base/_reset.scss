@@ -1,37 +1,103 @@
+// ============================================================================
+// CSS RESET
+// ============================================================================
 @use '../abstracts' as *;
 
-html {
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
+// Box sizing
 *,
-*:before,
-*:after {
-    box-sizing: inherit;
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ol,
-ul {
+// Remove default margin and padding
+* {
     margin: 0;
     padding: 0;
-    font-weight: normal;
 }
 
-ol,
-ul {
+// HTML & Body
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-size: 16px; // Base font size for rem calculations
+
+    @include respond-to('lg') {
+        font-size: 18px;
+    }
+}
+
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-normal;
+    color: $text-primary;
+    background-color: $bg-secondary;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+// Remove list styles
+ul,
+ol {
     list-style: none;
 }
 
-img {
+// Remove link styles
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+// Button reset
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+// Input reset
+input,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+// Image defaults
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
     max-width: 100%;
     height: auto;
+}
+
+// Table reset
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+// Remove textarea resize
+textarea {
+    resize: vertical;
+}
+
+// Focus visible (modern browsers)
+:focus-visible {
+    outline: 2px solid $primary-500;
+    outline-offset: 2px;
+}
+
+// Hide focus for mouse users
+:focus:not(:focus-visible) {
+    outline: none;
 }

@@ -1,0 +1,68 @@
+// ============================================================================
+// TYPOGRAPHY
+// ============================================================================
+
+// FONT FAMILIES
+$font-family-base: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+$font-family-heading: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+$font-family-mono: 'Roboto Mono', 'Courier New', monospace;
+
+// FONT SIZES
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-2xl: 1.5rem; // 24px
+$font-size-3xl: 1.875rem; // 30px
+$font-size-4xl: 2.25rem; // 36px
+$font-size-5xl: 3rem; // 48px
+$font-size-6xl: 3.75rem; // 60px
+
+// FONT WEIGHTS
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// LINE HEIGHTS
+$line-height-tight: 1.25;
+$line-height-snug: 1.375;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.625;
+$line-height-loose: 2;
+
+// LETTER SPACING
+$letter-spacing-tighter: -0.05em;
+$letter-spacing-tight: -0.025em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.025em;
+$letter-spacing-wider: 0.05em;
+$letter-spacing-widest: 0.1em;
+
+// TYPOGRAPHY SCALE MAP
+$typography-scale: (
+    'xs': ('size': $font-size-xs,
+        'line-height': $line-height-normal,
+        'weight': $font-weight-regular ),
+    'sm': ('size': $font-size-sm,
+        'line-height': $line-height-normal,
+        'weight': $font-weight-regular ),
+    'base': ('size': $font-size-base,
+        'line-height': $line-height-normal,
+        'weight': $font-weight-regular ),
+    'lg': ('size': $font-size-lg,
+        'line-height': $line-height-normal,
+        'weight': $font-weight-regular ),
+    'xl': ('size': $font-size-xl,
+        'line-height': $line-height-snug,
+        'weight': $font-weight-medium ),
+    '2xl': ('size': $font-size-2xl,
+        'line-height': $line-height-tight,
+        'weight': $font-weight-semibold ),
+    '3xl': ('size': $font-size-3xl,
+        'line-height': $line-height-tight,
+        'weight': $font-weight-bold )
+);

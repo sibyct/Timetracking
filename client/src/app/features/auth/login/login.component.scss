@@ -1,11 +1,7 @@
-@use "../../../../styles/abstracts" as vars;
-@use "../../../../styles/abstracts/colors" as colors;
+@use "../../../../styles/abstracts" as *;
 
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    @include flex-center;
     background-image: url('/assets/login-bg.png');
     background-size: cover;
     background-position: center;
@@ -13,64 +9,25 @@
 }
 
 .login-card {
-    width: 100%;
-    max-width: vars.$login-card-width;
-    padding: vars.$spacing-xl;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius: vars.$login-card-radius;
+    max-width: 400px;
+    border-radius: $radius-lg;
 }
 
 .login-header {
-    margin-bottom: vars.$spacing-xl;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-}
-
-.login-title {
-    font-size: vars.$font-size-lg;
-    font-weight: 500;
-    color: colors.$color-text-primary;
-    margin-bottom: vars.$spacing-sm;
-}
-
-.login-subtitle {
-    font-size: vars.$font-size-sm;
-    color: colors.$color-text-secondary;
-}
-
-.full-width {
-    width: 100%;
-    margin-bottom: vars.$spacing-md;
-}
-
-.actions {
-    margin-top: vars.$spacing-md;
-}
-
-.submit-button {
-    padding: vars.$spacing-xl 0;
-    font-size: vars.$font-size-md;
-}
-
-.footer {
-    text-align: center;
-    margin-top: vars.$spacing-xl;
-    padding-bottom: vars.$spacing-md;
+    @include flex-column;
 }
 
 .footer-text {
-    color: colors.$color-text-muted;
-    font-size: vars.$font-size-sm;
+    color: $text-secondary;
+    font-size: $font-size-sm;
 }
 
 .footer-link {
-    color: colors.$color-primary;
+    color: $text-primary;
     text-decoration: none;
     font-weight: 500;
-}
 
-.footer-link:hover {
-    text-decoration: underline;
+    &:hover {
+        text-decoration: underline;
+    }
 }

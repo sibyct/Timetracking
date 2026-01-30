@@ -5,6 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule } from '@angular/router';
 
+import { SIDEBAR_CONFIG } from './sidebar.config';
+
 @Component({
     selector: 'time-tracker-sidebar',
     standalone: true,
@@ -14,9 +16,5 @@ import { RouterModule } from '@angular/router';
 })
 export class SidebarComponent {
     collapsed = input<boolean>(false);
-    protected navItems = [
-        { label: 'Dashboard', icon: 'dashboard', route: '/dashboard' },
-        { label: 'Employees', icon: 'groups', route: '/employees' },
-
-    ];
+    protected navItems = SIDEBAR_CONFIG;
 }
