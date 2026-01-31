@@ -1,0 +1,15 @@
+@use "abstracts" as *;
+
+
+.job-view-info {
+    label {
+        font-size: $font-size-sm;
+        color: $neutral-500;
+    }
+
+    .value-text {
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+        color: $neutral-600;
+    }
+}
