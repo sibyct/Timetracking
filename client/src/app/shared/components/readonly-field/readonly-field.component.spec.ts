@@ -10,8 +10,8 @@ describe('ReadonlyFieldComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ReadonlyFieldComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(ReadonlyFieldComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -19,5 +19,19 @@ describe('ReadonlyFieldComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render the label', () => {
+    fixture.componentRef.setInput('label', 'Test Label');
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('label')?.textContent).toContain('Test Label');
+  });
+
+  it('should render the value', () => {
+    fixture.componentRef.setInput('value', 'Test Value');
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.value-text')?.textContent).toContain('Test Value');
   });
 });
