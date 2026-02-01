@@ -1,8 +1,3 @@
-Ah, my mistake! That changes the context significantly—and actually makes for a much more compelling **Senior-level** project. An **Employee Onboarding & Interview** system involves complex workflows, role-based access control (RBAC), and data privacy, which are great for showcasing your seniority.
-
-Here is a corrected, high-quality README for the **Timetracking** repo (you might consider renaming the repo later, but for now, we'll keep the title consistent with the URL).
-
----
 
 # 🤝 Employee Onboarding & Interview System
 
