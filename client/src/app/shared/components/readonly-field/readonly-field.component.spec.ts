@@ -17,7 +17,7 @@ describe('ReadonlyFieldComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create ReadonlyFieldComponent', () => {
     expect(component).toBeTruthy();
   });
 
@@ -25,13 +25,13 @@ describe('ReadonlyFieldComponent', () => {
     fixture.componentRef.setInput('label', 'Test Label');
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('label')?.textContent).toContain('Test Label');
+    expect(compiled.querySelector('label')?.textContent).toBe('Test Label');
   });
 
   it('should render the value', () => {
     fixture.componentRef.setInput('value', 'Test Value');
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.value-text')?.textContent).toContain('Test Value');
+    expect(compiled.querySelector('.value-text')?.textContent).toBe('Test Value');
   });
 });
