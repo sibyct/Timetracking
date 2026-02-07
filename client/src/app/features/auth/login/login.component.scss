@@ -1,31 +1,29 @@
 @use "../../../../styles/abstracts" as *;
 
+$login-bg: url("/assets/login-bg.png");
+
 .login-container {
-    @include flex-center;
-    background-image: url('/assets/login-bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  @include flex-center;
+  background-image: $login-bg;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .login-card {
-    max-width: 400px;
-    border-radius: $radius-lg;
-}
-
-.login-header {
-    @include flex-column;
+  max-width: 400px;
+  border-radius: $radius-lg;
 }
 
 .footer-text {
-    color: $text-secondary;
-    font-size: $font-size-sm;
+  color: $text-secondary;
+  font-size: $font-size-sm;
 }
 
 .footer-link {
-    color: $text-primary;
+  color: $text-primary;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 }
